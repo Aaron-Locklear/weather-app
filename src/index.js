@@ -95,18 +95,59 @@ function createHTMLElement(dayInfo){
   const tempLow = document.createElement("p");
   const humidity = document.createElement("p");
   const date = document.createElement("p");
-  
-  dayArticle.classList.add("day-article");
-  
+
+  //change color of elements text
+  tempHigh.style.color = "red";
+  tempLow.style.color = "blue";
+
+  //update text
   date.textContent = dayInfo.date.split("-").slice(1).join("-");
   tempHigh.textContent = dayInfo.tempHigh;
   tempLow.textContent = dayInfo.tempLow;
   humidity.textContent = dayInfo.humidity;
+
+  //create spans
+  const dateSpan = document.createElement("span");
+  const tempHighSpan = document.createElement("span");
+  const tempLowSpan = document.createElement("span");
+  const humiditySpan = document.createElement("span");
+
+  //import images
+  const dateImg = document.createElement("img");
+  dateImg.src = "../public/calendar.svg";
+  dateImg.alt = "Date Icon";
+
+  const tempHighImg = document.createElement("img");
+  tempHighImg.src = "../public/thermometerHot.svg";
+  tempHighImg.alt = "High Temperature Icon";
+
+  const tempLowImg = document.createElement("img");
+  tempLowImg.src = "../public/thermometerCold.svg";
+  tempLowImg.alt = "Low Temperature Icon";
+
+  const humidityImg = document.createElement("img");
+  humidityImg.src = "../public/droplet.svg";
+  humidityImg.alt = "Humidity Icon";
+
+  //add images and text to spans
+  dateSpan.appendChild(dateImg);
+  dateSpan.appendChild(date);
+
+  tempHighSpan.appendChild(tempHighImg);
+  tempHighSpan.appendChild(tempHigh);
+
+  tempLowSpan.appendChild(tempLowImg);
+  tempLowSpan.appendChild(tempLow);
+
+  humiditySpan.appendChild(humidityImg);
+  humiditySpan.appendChild(humidity);
   
-  dayArticle.appendChild(date);
-  dayArticle.appendChild(tempHigh);
-  dayArticle.appendChild(tempLow);
-  dayArticle.appendChild(humidity);
+  dayArticle.classList.add("day-article");
+  
+  dayArticle.appendChild(dateSpan);
+  dayArticle.appendChild(tempHighSpan);
+  dayArticle.appendChild(tempLowSpan);
+  dayArticle.appendChild(humiditySpan);
   
   weatherField.appendChild(dayArticle);
 }
