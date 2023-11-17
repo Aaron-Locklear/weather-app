@@ -1,4 +1,8 @@
 import "./style.css";
+import calendar from "../public/calendar.svg";
+import thermometerHot from "../public/thermometerHot.svg";
+import thermometerCold from "../public/thermometerCold.svg";
+import droplet from "../public/droplet.svg";
 
 async function getWeather(lat, lon) {
   try {
@@ -113,20 +117,20 @@ function createHTMLElement(dayInfo){
   const humiditySpan = document.createElement("span");
 
   //import images
-  const dateImg = document.createElement("img");
-  dateImg.src = "../public/calendar.svg";
+  const dateImg = new Image();
+  dateImg.src = calendar;
   dateImg.alt = "Date Icon";
 
-  const tempHighImg = document.createElement("img");
-  tempHighImg.src = "../public/thermometerHot.svg";
+  const tempHighImg = new Image();
+  tempHighImg.src = thermometerHot;
   tempHighImg.alt = "High Temperature Icon";
 
-  const tempLowImg = document.createElement("img");
-  tempLowImg.src = "../public/thermometerCold.svg";
+  const tempLowImg = new Image();
+  tempLowImg.src = thermometerCold;
   tempLowImg.alt = "Low Temperature Icon";
 
-  const humidityImg = document.createElement("img");
-  humidityImg.src = "../public/droplet.svg";
+  const humidityImg = new Image();
+  humidityImg.src = droplet;
   humidityImg.alt = "Humidity Icon";
 
   //add images and text to spans
