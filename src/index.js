@@ -141,7 +141,7 @@ function main(){
   const submit = document.querySelector(".submit-button");
   
   submit.addEventListener("click", () => {
-    displayWeather(latInput.value, lonInput.value);
+    displayWeather(latInput.value || 0, lonInput.value || 0);
 
     const weatherDisplay = document.querySelector(".weather-display");
     weatherDisplay.innerHTML = "";

@@ -7,6 +7,10 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  background-image: url('../public/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .content-holder {
@@ -42,8 +46,25 @@ article{
   width:150px;
   border-radius: 15px;
   box-shadow: 5px 5px 5px black;
+  background-color: white;
 }
 
 input{
   width: 60px;
+  border-radius: 5px;
+}
+
+h1{
+  color:silver;
+  text-shadow: 2px 2px 5px black;
+}
+
+input, button{
+  margin: 5px;
+  border-radius: 5px;
+  border-color: silver;
+  border-style: solid;
+  box-shadow: 2px 2px 2px black;
+  background-color: rgba(255,255,255,.3);
+  padding: 5px;
 }
